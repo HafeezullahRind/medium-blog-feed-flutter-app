@@ -8,13 +8,13 @@ class Blog {
   String contentB;
 
   Blog(
-      {this.titleB,
-      this.dateB,
-      this.linkB,
-      this.authorB,
-      this.thumbnailB,
-      this.descriptionB,
-      this.contentB});
+      {required this.titleB,
+      required this.dateB,
+      required this.linkB,
+      required this.authorB,
+      required this.thumbnailB,
+      required this.descriptionB,
+      required this.contentB});
 
   factory Blog.fromJSON(Map<String, dynamic> json) {
     return Blog(

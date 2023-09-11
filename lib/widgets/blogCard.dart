@@ -5,7 +5,7 @@ import 'package:medium_blog_app/view/blogDetails.dart';
 class BlogCard extends StatelessWidget {
   final Blog blog;
 
-  const BlogCard({Key key, this.blog}) : super(key: key);
+  const BlogCard({required this.blog});
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;

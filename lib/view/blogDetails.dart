@@ -5,7 +5,7 @@ import 'package:medium_blog_app/model/blog.dart';
 class BlogDetails extends StatelessWidget {
   final Blog blog;
 
-  const BlogDetails({Key key, this.blog}) : super(key: key);
+  const BlogDetails({required this.blog});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

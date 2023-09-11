@@ -3,6 +3,8 @@ import 'package:medium_blog_app/controller/blogController.dart';
 import 'package:medium_blog_app/widgets/blogCard.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../model/blogList.dart';
+
 class BlogFeed extends StatefulWidget {
   @override
   _BlogFeedState createState() => _BlogFeedState();
@@ -17,7 +19,8 @@ class _BlogFeedState extends State<BlogFeed> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: FutureBuilder(
+        child: FutureBuilder<BlogList>(
+          // Replace YourDataType with the actual class you're using
           future: MediumAPI().getAllBlogs(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
@@ -48,9 +51,9 @@ class _BlogFeedState extends State<BlogFeed> {
                         ],
                       ),
                     ),
-                    for (int i = 0; i < snapshot.data.blogs.length; i++)
+                    for (int i = 0; i < snapshot.data!.blogs.length; i++)
                       BlogCard(
-                        blog: snapshot.data.blogs[i],
+                        blog: snapshot.data!.blogs[i],
                       ),
                     Padding(
                       padding: EdgeInsets.all(10.0),
